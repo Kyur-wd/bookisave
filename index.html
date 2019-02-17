@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Bookisave - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Bookmark-Seite">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <script src="main.js"></script>
+</head>
+<body>
+    <header class="header">
+		<a href="index.html"><h2>Bookisave</h2></a>
+	</header>
+	<nav class="nav">
+		<div class="nav-btn-container">
+			<button name="add-btn" class="btn nav-btn important-btn">Add Bookmark</button>
+			<div class="settings-dropdown-container">
+				<button name="settings-btn" class="btn settings-btn fas fa-cog"></button>
+				<div class="settings-dropdown">
+					<button name="change-colors-btn" class="dd-btn">Change Colors</button>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<section class="container bookmark-section">
+		<!-- Bookmarks are being loaded in here -->
+	</section>
+	<section class="empty-message-container">
+		<span class="far fa-frown-open fa-4x"></span>
+		<h1>No bookmarks yet</h1>
+		<h2>Click "Add Bookmark" to get started.</h2>
+		<br />
+		<h3><strong class="important-bold-italic">Important</strong> Because all bookmarks are stored locally in your browser, you should avoid deleting &ldquo;Offline Data&rdquo;, &ldquo;Cookies and other site data&rdquo; or similar for this website. Otherwise you <strong class="important-bold-italic">will</strong> lose your stored bookmarks.</h3>
+	</section>
+	<!-- Modal -->
+	<div class="background-modal">
+		<!-- Modal content box -->
+		<div class="content-modal">
+		</div>
+	</div>
+</body>
+</html>

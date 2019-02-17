@@ -1,0 +1,631 @@
+/******** Default Settings ********/
+* 
+{
+    box-sizing: border-box;
+    font-family: Calibri;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+button
+{
+	border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from normal in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable input types in iOS */
+    -webkit-appearance: none;
+}
+
+label, output
+{
+    text-align: left;
+    font-weight: normal;
+}
+
+a
+{
+    text-decoration: none;
+}
+a:link, a:visited, a:hover, a:active
+{
+    color: white;
+}
+
+output
+{
+    border: 1px solid grey;
+    border-radius: 4px;
+    min-width: 40px;
+    text-align: center;
+    background-color: lightgrey;
+    color: black;
+    padding: 1px;
+}
+
+input[type=range]
+{
+    width: 200px;
+}
+
+input[type=text], input[type=url]
+{
+    width: 300px;
+    padding: 5px;
+    font-size: 20px;
+    text-align: left;
+    outline: none;
+    border: 1px solid lightgrey;
+    border-radius: 3%;
+    background-color: rgb(1, 1, 1, 0.05);
+    transition: border .5s, background-color .5s, box-shadow .5s;
+}
+
+input[type=text]:focus, input[type=url]:focus
+{
+    border: 1px solid var(--main-color);
+    background-color: white;
+    box-shadow: 1px 1px 6px var(--main-color);
+}
+
+p, span
+{
+    font-size: 12px;
+}
+
+/* fixes weird padding on button in firefox */
+button::-moz-focus-inner { border: 0; padding: 0; margin:0; }
+
+/******** END ********/
+
+/* Background */
+html
+{      
+    background: radial-gradient(var(--bg-first), var(--bg-second));
+    min-height: 100%;
+}
+
+.header, .btn
+{
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.header h2
+{
+    margin-left: 20px;
+}
+
+.header
+{
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    box-shadow: 0 3px 2px rgb(1, 1, 1, 0.2);
+    background-image: linear-gradient(var(--hover-color), var(--main-color), var(--click-color));
+}
+
+.flex-item-push-right
+{
+    margin-left: auto;
+}
+
+.header a:last-child
+{
+    margin-right: 10px;
+}
+
+.impressum-link
+{
+    margin: 0 5px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    padding: 0 5px;
+}
+
+.impressum-link:hover, .header a:last-child:hover
+{
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.information-container
+{
+    text-align: left;
+    max-width: 900px !important;
+}
+
+.information-container a
+{
+    color: black;
+    text-decoration: underline;
+}
+
+.information-container p
+{
+    font-size: 16px;
+}
+
+.information-container *
+{
+    text-align: left;
+}
+
+.twitter-btn:hover
+{
+    color: lightgrey;
+}
+
+.container
+{
+	margin: 0 auto;
+    max-width: 1600px;
+    padding: 20px 20px 20px 0; /*0 padding left, because bookmark-item has 20px margin-left */ 
+}
+
+.nav
+{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.nav-btn-container > button
+{
+    margin-right: 10px;
+}
+
+.nav-btn-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 15px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--main-color);
+}
+
+.settings-dropdown-container
+{
+    position: relative;
+}
+
+.settings-dropdown
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    transform: translate(10px, -15px);
+    animation-name: dropdown-fadeIn;
+    animation-duration: .1s;
+    overflow: hidden;
+    display: none;
+    z-index: 10;
+}
+
+@keyframes dropdown-fadeIn
+{
+    from {height: 0;}
+    to {height: 30px;}
+}
+
+@keyframes dropdown-fadeOut
+{
+    from {height: 30px;}
+    to {height: 0;}
+}
+
+.dd-btn
+{
+    border-bottom: 1px solid var(--main-color);
+    color: var(--main-color);
+    min-width: 125px;
+    text-align: left;
+    padding: 5px;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.dd-btn:hover
+{
+    background-color: var(--main-color);
+    color: white;
+    cursor: pointer;
+}
+
+.dd-btn:active
+{
+    background-color: var(--click-color);
+}
+
+.dd-btn:last-child
+{
+    border-bottom: none;
+}
+
+.bookmark-section
+{
+    display: flex;
+    flex-wrap: wrap;
+	justify-content: center;
+	background-position: center;
+}
+
+.empty-message-container
+{
+    margin: 0 20%;
+    color: grey;
+    display: none;
+}
+
+.empty-message-container > h1
+{
+    font-size: 40px;
+}
+
+.important-bold-italic
+{
+    font-weight: bold;
+    font-style: italic;
+    background-color: var(--main-color);
+    border-radius: 15px;
+    padding: 2px 10px;
+    color: white;
+}
+
+.bookmark-item
+{
+    border: 3px solid var(--main-color);
+    border-radius: 5%;
+    width: 200px;
+    height: 200px;
+    padding: 8px 8px;
+    margin: 0 0 20px 20px;
+	background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 4px 4px 2px rgb(1, 1, 1, 0.2);
+}
+
+.bookmark-item h3
+{
+    background-color: var(--main-color);
+    display: inline-block;
+    margin: 20px 0 10px 0;
+    padding: 0 7px;
+    border-radius: 10px;
+    color: white;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.item-description
+{
+    margin: 10px 0;
+    border-top: 1px solid rgb(196, 196, 196);
+    border-bottom: 1px solid rgb(196, 196, 196);
+    background-color: rgba(230, 230, 230, 0.5);
+    height: 50px;
+    width: 100%;
+    word-break: break-all;
+    color: grey;
+    font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.item-description-text
+{
+    color: var(--main-color);
+    padding: 0 2px;
+}
+
+.item-top-row
+{
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+    padding-bottom: 4px;
+}
+
+.btn
+{
+    cursor: pointer;
+    padding: 5px 10px;
+    outline: none;
+    border: 1px solid grey;
+	font-size: 16px;
+	transition: background-color .25s, border-color .25s, color .25s, text-shadow .25s;
+}
+
+.item-btn:hover, .nav-btn:hover, .edit-btn:hover, .settings-btn:hover, .copy-btn:hover
+{
+    color: var(--main-color);
+    border-color: var(--main-color);
+	text-shadow: 1px 0 0 var(--main-color);
+}
+
+.settings-btn
+{
+    border: none;
+    padding: 0;
+    color: grey;
+    font-size: 26px !important;
+}
+
+.btn:active
+{
+	transition: none;
+}
+
+.item-btn:active, .nav-btn:active
+{
+    background-color: var(--main-color);
+	color: white;
+    border: 1px solid var(--main-color);
+}
+
+.item-btn
+{
+    padding: 2px 4px;
+}
+
+.delete-btn
+{
+    font-size: 20px !important;
+    padding: 0;
+    border: none;
+	color: grey;
+}
+
+.delete-btn:hover
+{
+    color: rgb(202, 46, 19);
+    text-shadow: 1px 0 0 rgb(202, 46, 19);
+}
+
+.delete-btn:active
+{
+    color: rgb(82, 19, 8);
+}
+
+.edit-btn
+{
+    margin-right: 3px;
+	padding: 0;
+	border: none;
+	color: grey;
+}
+
+.edit-btn:active, .settings-btn:active, .copy-btn:active
+{
+	color: var(--click-color);
+}
+
+.copied-hint
+{
+    position: absolute; /* Somit frei platzierbar (da Parent: Position Relative hat) */
+    transform: translate(235%,-75%);
+    background-color: var(--main-color);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    animation-name: copiedHint;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+}
+
+@keyframes copiedHint
+{
+    from {top: 0; opacity: 1;}
+    to {top: -20px; opacity: 0;}
+}
+
+.copy-btn
+{
+    border: none;
+    padding: 0;
+    margin-right: 5px;
+}
+
+.item-btn-container
+{
+	display: flex;
+	align-items: center;
+    justify-content: center;
+}
+
+.important-btn
+{
+	background-color: var(--main-color);
+	color: white;
+    border: 1px solid var(--main-color);
+    border-radius: 15px;
+}
+
+.important-btn:hover
+{
+    background-color: var(--hover-color);
+    border-color: var(--main-color);
+    color: white;
+	text-shadow: 1px 0 0 white;
+}
+
+.important-btn:active
+{
+    background-color: var(--click-color);
+    border-color: var(--click-color);
+}
+
+.background-modal
+{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(1, 1, 1, 0.5);
+    left: 0;
+    top: 0;
+    overflow: auto; /*Scrollbar if necessary*/
+    display: none;
+    animation: fadeInModalBackground;
+    animation-duration: .3s;
+}
+
+.content-modal
+{
+	background-color: white;
+	position: relative;
+	display: inline-block;
+	padding: 50px 50px 25px;
+	margin: 10vh auto;
+	box-shadow: 0 0 12px lightgrey;
+	border-radius: 1%;
+	animation-name: slideInModal;
+	animation-duration: .3s;
+}
+
+.heading-modal
+{
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(1, 1, 1, 0.1);
+    border-top: 1px solid rgb(1, 1, 1, 0.1);
+    margin-bottom: 40px;
+}
+
+@keyframes slideInModal 
+{
+    from {top: -300px; opacity: 0;}
+    to {top: 0; opacity: 1;}
+}
+
+@keyframes slideOutModal 
+{
+    from {top: 0; opacity: 1;}
+    to {top: -300px; opacity: 0;}
+}
+
+@keyframes fadeInModalBackground
+{
+    from {background-color: rgba(1, 1, 1, 0);}
+    to {background-color: rgba(1, 1, 1, 0.5);}
+}
+
+@keyframes fadeOutModalBackground
+{
+    from {background-color: rgba(1, 1, 1, 0.5);}
+    to {background-color: rgba(1, 1, 1, 0);}
+}
+
+.content-modal-text
+{
+	display: inline-block;
+	font-size: 20px;
+	border-top: 1px solid rgb(1, 1, 1, 0.1);
+	border-bottom: 1px solid rgb(1, 1, 1, 0.1);
+	padding: 10px 0;
+}
+
+.content-modal button
+{
+	margin: 30px 20px 0 0;
+}
+
+.content-modal button:last-child
+{
+	margin-right: 0;
+}
+
+.form-input-container
+{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+.form-input-container-colors
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.sliders-container
+{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    margin: 0 20px;
+}
+/* input placeholder text */
+/* FF */
+::placeholder
+{
+    color: black;
+    opacity: 0.2;
+}
+/* Internet Explorer 10-11 */
+:-ms-input-placeholder 
+{ 
+    color: black;
+    opacity: 0.2;
+}
+/* Microsoft Edge */
+::-ms-input-placeholder 
+{ 
+    color: black;
+    opacity: 0.2;
+}
+
+.fa-copy
+{
+	color: grey;
+    font-size: 15px !important;
+}
+
+.fa-mouse-pointer
+{
+	color: grey;
+    font-size: 12px !important;
+}
+
+.fa-trash-alt
+{
+    font-size: 17px !important;
+}
+
+.fa-edit
+{
+	font-size: 15px !important;
+}
+
+.fa-angle-double-right
+{
+    font-size: 16px !important;
+    padding: 3px 30px !important;
+}
